@@ -161,6 +161,14 @@ set background=dark
 
 " Set extra options when running in GUI mode
 if has("gui_running")
+    try
+        colorscheme desert
+    catch
+    endtry
+
+    set background=dark
+
+ 
     set guioptions-=T
     set guioptions-=e
     set t_Co=256
