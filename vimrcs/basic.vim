@@ -317,7 +317,7 @@ fun! CleanExtraSpaces()
 endfun
 
 if has("autocmd")
-    autocmd BufWritePre *.js,*.py,*.wiki,*.sh,*.coffee :call CleanExtraSpaces()
+    autocmd BufWritePre *.txt,*.js,*.py,*.wiki,*.sh,*.coffee :call CleanExtraSpaces()
 endif
 
 
@@ -382,15 +382,7 @@ function! <SID>BufcloseCloseIt()
    endif
 endfunction
 
-
 " Make VIM remember position in file after reopen
 " if has("autocmd")
 "   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 "endif
-"
-
-""""
-" Personal
-""""
-
-set autochdir

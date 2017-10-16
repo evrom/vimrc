@@ -1,5 +1,6 @@
 # NOTE
 This is my personal configuration.
+![VIM](https://dnp4pehkvoo6n.cloudfront.net/43c5af597bd5c1a64eb1829f011c208f/as/Ultimate%20Vimrc.svg)
 
 
 # The Ultimate vimrc
@@ -16,7 +17,7 @@ I would, of course, recommend using the awesome version.
 ## How to install the Awesome version?
 The awesome version includes a lot of great plugins, configurations and color schemes that make Vim a lot better. To install it simply do following from your terminal:
 
-	git clone https://github.com/amix/vimrc.git ~/.vim_runtime
+	git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime
 	sh ~/.vim_runtime/install_awesome_vimrc.sh
 
 I also recommend using [the Hack font](http://sourcefoundry.org/hack/) (it's a free and awesome font designed for source code). The Awesome vimrc is already setup to try to use it.
@@ -26,7 +27,7 @@ The basic version is just one file and no plugins. Just copy [basic.vim](https:/
 
 The basic version is useful to install on remote servers where you don't need many plugins, and you don't do many edits.
 
-	git clone git://github.com/amix/vimrc.git ~/.vim_runtime
+	git clone --depth=1 git://github.com/amix/vimrc.git ~/.vim_runtime
 	sh ~/.vim_runtime/install_basic_vimrc.sh
 
 
@@ -53,12 +54,11 @@ Colors when editing a Python file:
 
 ![Screenshot 1](https://dnp4pehkvoo6n.cloudfront.net/07583008e4da885801657e8781777844/as/Python%20editing.png)
 
-Opening recently opened files with the [mru.vim](https://github.com/vim-scripts/mru.vim) plugin:
-
-![Screenshot 2](https://dnp4pehkvoo6n.cloudfront.net/1d49a88f9bd5d013c025bb1e1272a7d8/as/MRU%20plugin.png)
-
 [NERD Tree](https://github.com/scrooloose/nerdtree) plugin in a terminal window:
-![Screenshot 3](https://dnp4pehkvoo6n.cloudfront.net/ae719203166585d64728f28398f4b1b7/as/Terminal%20usage.png)
+![Screenshot 3](http://files1.wedoist.com/b1509d7ed9e9f357e8d04797f9fad67b/as/screenshot3.png)
+
+This vimrc even works on Windows!
+![Screenshot 4](http://files1.wedoist.com/4e85163d97b81422240c822c82022f2f/as/screenshot_4.png)
 
 Distraction free mode using [goyo.vim](https://github.com/junegunn/goyo.vim) and [vim-zenroom2](https://github.com/amix/vim-zenroom2):
 ![Screenshot 4](https://dnp4pehkvoo6n.cloudfront.net/f0dcc4c9739148c56cbf8285a910ac41/as/Zen%20mode.png)
@@ -84,15 +84,12 @@ I recommend reading the docs of these plugins to understand them better. Each pl
 * [vim-fugitive](https://github.com/tpope/vim-fugitive): A Git wrapper so awesome, it should be illegal
 * [vim-indent-object](https://github.com/michaeljsmith/vim-indent-object): Defines a new text object representing lines of code at the same indent level. Useful for python/vim scripts
 * [vim-multiple-cursors](https://github.com/terryma/vim-multiple-cursors): Sublime Text style multiple selections for Vim, CTRL+N is remapped to CTRL+S (due to YankRing)
-* [vim-yankstack](https://github.com/maxbrunsfeld/vim-yankstack): Maintains a history of previous yanks, changes and deletes
+* [vim-expand-region](https://github.com/terryma/vim-expand-region): Allows you to visually select increasingly larger regions of text using the same key combination.
+* [vim-fugitive](https://github.com/tpope/vim-fugitive): A Git wrapper so awesome, it should be illegal
+* [goyo.vim](https://github.com/junegunn/goyo.vim) and [vim-zenroom2](https://github.com/amix/vim-zenroom2): 
 Remove all clutter and focus only on the essential. Similar to iA Writer or Write Room [Read more here](http://amix.dk/blog/post/19744)
-
-
-## Included color schemes
-
-* [peaksea](https://github.com/vim-scripts/peaksea): The default
-* [vim-colors-solarized](https://github.com/altercation/vim-colors-solarized)
-* [vim-irblack](https://github.com/wgibbs/vim-irblack)
+* [vim-commentary](https://github.com/tpope/vim-commentary): Comment stuff out.  Use `gcc` to comment out a line (takes a count), `gc` to comment out the target of a motion. `gcu` uncomments a set of adjacent commented lines.
+* [syntastic](https://github.com/scrooloose/syntastic): Syntax checking hacks for vim
 * [vim-yankstack](https://github.com/maxbrunsfeld/vim-yankstack): Maintains a history of previous yanks, changes and deletes
 Remove all clutter and focus only on the essential. Similar to iA Writer or Write Room [Read more here](http://amix.dk/blog/post/19744)
 
@@ -131,13 +128,6 @@ You can also install your plugins, for instance, via pathogen you can install [v
 
 
 ## Key Mappings
-
-The [leader](http://learnvimscriptthehardway.stevelosh.com/chapters/06.html#leader) is `,`, so whenever you see `<leader>` it means `,`.
-
-## Key Mappings
-
-The [leader](http://learnvimscriptthehardway.stevelosh.com/chapters/06.html#leader) is `,`, so whenever you see `<leader>` it means `,`.
-
 
 ### Plugin related mappings
 
@@ -298,9 +288,7 @@ Shortcuts using `<leader>` instead of special characters:
     map <leader>s? z=
 
 
-### Cope
-
-When you search with `Ack.vim`, display your results in cope by doing:
+When you search with vimgrep, display your results in cope by doing:
 `<leader>cc`
 
 To go to the next search result do:
